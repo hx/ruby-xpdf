@@ -2,7 +2,7 @@ require 'mkmf'
 
 root = File.expand_path('../../..', __FILE__)
 
-Dir.chdir(File.join(root, 'vendor/xpdf-3.02')) do
+Dir.chdir(File.join(root, 'vendor/xpdf-3.04')) do
   system "./configure", "--prefix=#{root}"
   system "make"
   system "make install"

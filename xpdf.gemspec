@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = 'xpdf'
-  s.version = '3.02pl6'
+  s.version = '3.04'
   s.summary = 'Xpdf Ruby Wrapper'
   s.authors = 'Joshua Peek (https://github.com/josh)'
   s.description = 'Hax to get Xpdf compiled on Heroku'
