@@ -1,9 +1,8 @@
 module Xpdf
-  Root = File.expand_path('../..', __FILE__)
-  Bin  = File.join(Root, 'bin')
+  ROOT = File.expand_path('../..', __FILE__)
+  BIN  = File.join(ROOT, 'bin')
 
-  Executables = Dir.entries(Bin).inject({}) { |h, fn|
-    h[fn.to_sym] = File.join(Bin, fn) unless fn.start_with?('.')
-    h
-  }
+  Dir.entries(BIN).each do |fn|
+    const_set(fn.upcase, File.join(BIN, fn)) unless fn.start_with?('.')
+  end
 end
