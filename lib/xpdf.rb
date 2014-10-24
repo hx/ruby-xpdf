@@ -1,11 +1,9 @@
-require 'pathname'
-
 module Xpdf
-  Root = Pathname.new(File.expand_path('../..', __FILE__))
-  Bin  = Root.join('bin')
+  Root = File.expand_path('../..', __FILE__)
+  Bin  = File.join(Root, 'bin')
 
-  Executables = Bin.children.inject({}) { |h, p|
-    h[p.basename.to_s.to_sym] = p.to_s
+  Executables = Dir.entries(Bin).inject({}) { |h, fn|
+    h[fn.to_sym] = File.join(Bin, fn) unless fn.start_with?('.')
     h
   }
 end
